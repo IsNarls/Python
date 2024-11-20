@@ -1,0 +1,21 @@
+for key in circles.npc_lists.keys():
+            my_list = circles.npc_lists[key]
+            if my_list == []:
+                #print(my_list)
+                x = previous_list_x
+                y = previous_list_y
+            else:
+                x = my_list[0][0]
+                y = my_list[0][1]
+                previous_list_x = x
+                previous_list_y = y
+        #for key in circles.npc_lists.keys():
+            #x,y = circles.get_circle_coordinates(key)
+            if x > 10000 and x < 20000:
+                x -= 10000
+                pg.draw.circle(updateable_layer, (0, 255, 0), (x, y), 8)  # Draw red dots
+            elif x > 20000:
+                x -= 20000
+                pg.draw.circle(updateable_layer, (0, 0, 255), (x, y), 8)  # Draw red dots
+            else:
+                pg.draw.circle(updateable_layer, (255, 0, 0), (x, y), 8)  # Draw red dots
